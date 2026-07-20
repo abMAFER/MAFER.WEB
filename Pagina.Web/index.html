@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Liceo Nacional Manuel Felipe Rúgeles #MAFER</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="img/escudo.png" alt="Escudo del Liceo" class="logo-img">
+                <div>
+                    <h1>Liceo Nacional</h1>
+                    <span>Manuel Felipe Rúgeles</span>
+                </div>
+            </div>
+            <nav>
+                <!-- Menú principal con todos los ítems (Inicio, Historia, Filosofía, Oferta, Eventos, Contacto) -->
+                <ul class="nav-menu" id="navMenu">
+    <li><a href="#" data-page="inicio" class="active">Inicio</a></li>
+    <li><a href="#" data-page="historia">Historia</a></li>
+    <li><a href="#" data-page="filosofia">Filosofía</a></li>
+    <li><a href="#" data-page="oferta">Oferta</a></li>
+    <li><a href="#" data-page="eventos">Eventos</a></li> 
+    <li><a href="#" data-page="contacto">Contacto</a></li>
+</ul>
+                <!-- Menú hamburguesa (ícono) siempre visible -->
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        <div class="hamburger-menu" id="hamburgerMenu">
+    <ul>
+        <li><a href="#" data-page="calendario">Calendario</a></li>
+        <li><a href="#" data-page="normas">Normas</a></li>
+        <li><a href="#" data-page="galeria">Galería</a></li> 
+        <li><a href="#" data-page="noticias">Noticias</a></li>
+    </ul>
+</div>
+    </header>
+
+    <main id="main-content">
+        <!-- El contenido lo inyecta JavaScript -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
