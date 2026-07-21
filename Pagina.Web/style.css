@@ -1669,3 +1669,9 @@ nav {
         padding: 1rem 1.2rem;
     }
 }
+/* En escritorio: ocultar los ítems principales del menú desplegable */
+@media (min-width: 800px) {
+    .menu-principal-item {
+        display: none !important;
+    }
+}
