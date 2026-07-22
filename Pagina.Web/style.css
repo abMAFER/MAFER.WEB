@@ -45,7 +45,6 @@ h1, h2, h3, h4 {
     padding: 0 2rem;
 }
 
-/* HEADER */
 header {
     background: var(--azul-principal);
     color: white;
@@ -94,7 +93,6 @@ nav {
     gap: 1rem;
 }
 
-/* Menú principal */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -120,7 +118,6 @@ nav {
     border-bottom-color: var(--amarillo-sec);
 }
 
-/* Botón hamburguesa (siempre visible) */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -148,7 +145,6 @@ nav {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Menú desplegable (hamburguesa) */
 .hamburger-menu {
     display: none;
     background: var(--azul-principal);
@@ -189,21 +185,18 @@ nav {
     color: var(--amarillo-sec);
 }
 
-/* En escritorio: ocultar los ítems principales del menú desplegable */
 @media (min-width: 800px) {
     .menu-principal-item {
         display: none !important;
     }
 }
 
-/* En móvil: ocultar el menú principal */
 @media (max-width: 799px) {
     .nav-menu {
         display: none !important;
     }
 }
 
-/* HERO */
 .hero {
     background: linear-gradient(rgba(0, 68, 255, 0.45), rgba(0, 68, 255, 0.174)), url('img/fondo-hero.jpg') center/cover no-repeat;
     color: white;
@@ -242,7 +235,6 @@ nav {
     background: #e68a00;
 }
 
-/* Placeholder para otras secciones */
 .placeholder-section {
     padding: 5rem 2rem;
     text-align: center;
@@ -629,7 +621,7 @@ nav {
     color: var(--azul-principal);
 }
 
-/* ===== SECCIÓN CALENDARIO (VERSIÓN CUADRÍCULA INTERACTIVA) ===== */
+/* ===== SECCIÓN CALENDARIO ===== */
 .calendario-section {
     padding: 2rem 1rem;
     background: var(--blanco);
