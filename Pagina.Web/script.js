@@ -338,7 +338,7 @@ function loadPage(page) {
         for (let i = 1; i <= 21; i++) {
             imagenesHtml += `
                 <div class="galeria-item">
-                    <img src="seccion_galeria/IMG_${i}.jpg" alt="Imagen ${i}" loading="lazy">
+                    <img src="sección_galeria/IMG_${i}.jpg" alt="Imagen ${i}" loading="lazy">
                 </div>
             `;
         }
@@ -357,7 +357,7 @@ function loadPage(page) {
 
     // EVENTOS
     else if (page === 'eventos') {
-        const carpetaEventos = 'seccion_eventos/';
+        const carpetaEventos = 'sección_eventos/';
         const nombreBase = 'S_';
         const extension = '.jpg';
         const totalEventos = 10;
@@ -495,6 +495,10 @@ document.querySelectorAll('.hamburger-menu a').forEach(link => {
     });
 });
 
+// Cargar Inicio al abrir la página
+document.addEventListener('DOMContentLoaded', () => {
+    loadPage('inicio');
+});
 // Cargar Inicio al abrir la página
 document.addEventListener('DOMContentLoaded', () => {
     loadPage('inicio');
