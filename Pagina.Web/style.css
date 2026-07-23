@@ -501,7 +501,7 @@ nav {
 
 .oferta-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 2.5rem;
 }
@@ -1116,6 +1116,64 @@ nav {
     display: block;
 }
 
+/* ===== MODAL PARA MENSAJES DE MATERIAS ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--gris-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+.modal-content .modal-btn {
+    background: var(--azul-principal);
+    color: white;
+    border: none;
+    padding: 0.7rem 2.5rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-content .modal-btn:hover {
+    background: var(--amarillo-sec);
+    color: var(--azul-principal);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1279px) and (min-width: 800px) {
     .container {
@@ -1135,7 +1193,7 @@ nav {
         font-size: 1rem;
     }
     .oferta-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
     .oferta-card h3 {
@@ -1378,66 +1436,6 @@ nav {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 0.8rem;
     }
-}
-/* ===== MODAL PARA MENSAJES DE MATERIAS ===== */
-.modal-overlay {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-content {
-    background: #ffffff;
-    padding: 2.5rem 2rem;
-    border-radius: 20px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    animation: modalFadeIn 0.3s ease-out;
-}
-
-.modal-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--gris-oscuro);
-    margin-bottom: 1.5rem;
-}
-
-.modal-content .modal-btn {
-    background: var(--azul-principal);
-    color: white;
-    border: none;
-    padding: 0.7rem 2.5rem;
-    border-radius: 40px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.modal-content .modal-btn:hover {
-    background: var(--amarillo-sec);
-    color: var(--azul-principal);
-}
-
-@keyframes modalFadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 799px) {
     .modal-content {
         padding: 2rem 1.5rem;
     }
