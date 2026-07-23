@@ -38,7 +38,7 @@ function loadPage(page) {
                     <p> MINISTERIO DEL PODER POPULAR PARA LA EDUCACION,<br>
                     ZONA EDUCATIVA TACHIRA<br>
                     "Liceo Nacional Manuel Felipe Rugeles" #MAFER<br>
-                    (2006-2026)</p>
+                    (2000-2026)</p>
                     <a href="#" id="btn-conocenos" class="btn">Conocenos</a>
                 </div>
             </section>
