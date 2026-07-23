@@ -170,11 +170,20 @@ function loadPage(page) {
                                     <li class="materia-item" data-materia="Geografia, Historia y Ciudadania (GHC)" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Geografia, Historia y Ciudadania (GHC)
                                     </li>
-                                    <li class="materia-item" data-materia="Biologia, Quimica, Fisica, Ciencias de la Tierra" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
-                                        <span style="color: var(--amarillo-sec);">▸</span> Biologia, Quimica, Fisica, Ciencias de la Tierra
+                                    <li class="materia-item" data-materia="Biologia" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
+                                        <span style="color: var(--amarillo-sec);">▸</span> Biologia
+                                    </li>
+                                    <li class="materia-item" data-materia="Quimica" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
+                                        <span style="color: var(--amarillo-sec);">▸</span> Quimica
+                                    </li>
+                                    <li class="materia-item" data-materia="Fisica" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
+                                        <span style="color: var(--amarillo-sec);">▸</span> Fisica
                                     </li>
                                 </ul>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li class="materia-item" data-materia="Ciencias de la Tierra" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
+                                        <span style="color: var(--amarillo-sec);">▸</span> Ciencias de la Tierra
+                                    </li>
                                     <li class="materia-item" data-materia="Ingles" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Ingles
                                     </li>
@@ -262,7 +271,7 @@ function loadPage(page) {
         });
         hamburger.classList.remove('active');
         hamburgerMenu.classList.remove('active');
-        return; // Salir para que no se inyecte el HTML nuevamente
+        return;
     }
 
     // ==================== CALENDARIO ====================
