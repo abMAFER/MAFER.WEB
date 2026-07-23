@@ -178,11 +178,6 @@ function loadPage(page) {
                                 <li><strong>Informatica</strong></li>
                             </ul>
                         </div>
-                        <div class="oferta-card">
-                            <div class="icon"></div>
-                           
-                        </div>
-                    </div>
                     <div class="oferta-horario">
                         <h3>Horario escolar</h3>
                         <div class="horario-item">
