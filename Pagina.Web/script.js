@@ -180,8 +180,7 @@ function loadPage(page) {
                         </div>
                         <div class="oferta-card">
                             <div class="icon"></div>
-                            <h3>Educacion Inicial y Primaria</h3>
-                            <p>Niveles de educacion basica (anexa al liceo) que garantizan una formacion temprana de calidad.</p>
+                           
                         </div>
                     </div>
                     <div class="oferta-horario">
