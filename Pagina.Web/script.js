@@ -3,10 +3,34 @@ const mainContent = document.getElementById('main-content');
 const hamburger = document.getElementById('hamburger');
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 
+// === FUNCION PARA MOSTRAR EL MODAL ===
+function mostrarModal(mensaje) {
+    const modal = document.getElementById('modalMensaje');
+    const texto = document.getElementById('modalTexto');
+    texto.innerHTML = mensaje;
+    modal.classList.add('active');
+}
+
+// === FUNCION PARA CERRAR EL MODAL ===
+function cerrarModal() {
+    const modal = document.getElementById('modalMensaje');
+    modal.classList.remove('active');
+}
+
+// Evento para cerrar el modal con el botón
+document.getElementById('modalCerrar').addEventListener('click', cerrarModal);
+
+// Cerrar el modal al hacer clic en el fondo oscuro
+document.getElementById('modalMensaje').addEventListener('click', function(e) {
+    if (e.target === this) {
+        cerrarModal();
+    }
+});
+
 function loadPage(page) {
     let html = '';
 
-    // INICIO
+    // ==================== INICIO ====================
     if (page === 'inicio') {
         html = `
             <section class="hero page-view">
@@ -38,7 +62,7 @@ function loadPage(page) {
         return;
     }
 
-    // HISTORIA
+    // ==================== HISTORIA ====================
     else if (page === 'historia') {
         html = `
             <section class="history-section page-view">
@@ -75,7 +99,7 @@ function loadPage(page) {
         `;
     }
 
-    // FILOSOFIA
+    // ==================== FILOSOFIA ====================
     else if (page === 'filosofia') {
         html = `
             <section class="filosofia-section page-view">
@@ -120,7 +144,7 @@ function loadPage(page) {
         `;
     }
 
-    // OFERTA ACADEMICA
+    // ==================== OFERTA ACADEMICA ====================
     else if (page === 'oferta') {
         html = `
             <section class="oferta-section page-view">
@@ -130,54 +154,70 @@ function loadPage(page) {
                         El Liceo Nacional Manuel Felipe Rugeles ofrece una formacion integral que abarca distintos niveles y modalidades, adaptandose a las necesidades de la comunidad educativa.
                     </p>
                     <div class="oferta-grid">
+                        <!-- Educacion Media General -->
                         <div class="oferta-card">
                             <div class="icon"></div>
                             <h3>Educacion Media General</h3>
                             <p><strong>Areas de aprendizaje presentes (impartidas por el personal docente):</strong></p>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 1rem; margin-top: 0.5rem;">
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Castellano" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Castellano
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Matematica" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Matematica
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Geografia, Historia y Ciudadania (GHC)" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Geografia, Historia y Ciudadania (GHC)
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Biologia, Quimica, Fisica, Ciencias de la Tierra" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Biologia, Quimica, Fisica, Ciencias de la Tierra
                                     </li>
                                 </ul>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Ingles" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Ingles
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Arte y Patrimonio" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Arte y Patrimonio
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Deporte" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Deporte
                                     </li>
-                                    <li style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem;">
+                                    <li class="materia-item" data-materia="Soberania" style="padding: 0.2rem 0; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">
                                         <span style="color: var(--amarillo-sec);">▸</span> Soberania
                                     </li>
                                 </ul>
                             </div>
                         </div>
+
+                        <!-- Grupos de interes -->
                         <div class="oferta-card tecnic">
                             <div class="icon"></div>
                             <h3>Grupos de interes</h3>
                             <p>Actividades extracurriculares para el desarrollo integral:</p>
-                            <ul>
-                                <li><strong>Teatro</strong></li>
-                                <li><strong>Danza</strong></li>
-                                <li><strong>Zancos</strong></li>
-                                <li><strong>Frances</strong></li>
-                                <li><strong>Ajedrez</strong></li>
-                                <li><strong>Informatica</strong></li>
+                            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0;">
+                                <li class="grupo-item" data-grupo="Teatro" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Teatro</strong>
+                                </li>
+                                <li class="grupo-item" data-grupo="Danza" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Danza</strong>
+                                </li>
+                                <li class="grupo-item" data-grupo="Zancos" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Zancos</strong>
+                                </li>
+                                <li class="grupo-item" data-grupo="Frances" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Frances</strong>
+                                </li>
+                                <li class="grupo-item" data-grupo="Ajedrez" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Ajedrez</strong>
+                                </li>
+                                <li class="grupo-item" data-grupo="Informatica" style="padding: 0.3rem 0; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background 0.2s;">
+                                    <span style="color: var(--amarillo-sec);">▸</span> <strong>Informatica</strong>
+                                </li>
                             </ul>
                         </div>
+                    </div>
                     <div class="oferta-horario">
                         <h3>Horario escolar</h3>
                         <div class="horario-item">
@@ -193,9 +233,39 @@ function loadPage(page) {
                 </div>
             </section>
         `;
+
+        // Inyectar el HTML en el main
+        mainContent.innerHTML = html;
+
+        // === AGREGAR EVENTOS A LAS MATERIAS ===
+        document.querySelectorAll('.materia-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const materia = this.dataset.materia;
+                mostrarModal(`Apreciados estudiantes, sean todos bienvenidos a la asignatura:<br><strong>${materia}</strong><br>proximamente el docente que impartira la materia.`);
+            });
+        });
+
+        // === AGREGAR EVENTOS A LOS GRUPOS ===
+        document.querySelectorAll('.grupo-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const grupo = this.dataset.grupo;
+                mostrarModal(`Apreciados estudiantes, sean todos bienvenidos al grupo de interes:<br><strong>${grupo}</strong><br>proximamente el docente que impartira el grupo.`);
+            });
+        });
+
+        // Actualizar menú activo y cerrar hamburguesa
+        document.querySelectorAll('.nav-menu a, .hamburger-menu a').forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.page === page) {
+                link.classList.add('active');
+            }
+        });
+        hamburger.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
+        return; // Salir para que no se inyecte el HTML nuevamente
     }
 
-    // CALENDARIO
+    // ==================== CALENDARIO ====================
     else if (page === 'calendario') {
         let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();
@@ -294,7 +364,7 @@ function loadPage(page) {
         return;
     }
 
-    // NORMAS
+    // ==================== NORMAS ====================
     else if (page === 'normas') {
         html = `
             <section class="normas-section page-view">
@@ -326,7 +396,7 @@ function loadPage(page) {
         `;
     }
 
-    // GALERIA
+    // ==================== GALERIA ====================
     else if (page === 'galeria') {
         let imagenesHtml = '';
         for (let i = 1; i <= 21; i++) {
@@ -349,7 +419,7 @@ function loadPage(page) {
         `;
     }
 
-    // EVENTOS
+    // ==================== EVENTOS ====================
     else if (page === 'eventos') {
         const carpetaEventos = 'sección_eventos/';
         const nombreBase = 'S_';
@@ -376,7 +446,7 @@ function loadPage(page) {
         `;
     }
 
-    // CONTACTO
+    // ==================== CONTACTO ====================
     else if (page === 'contacto') {
         html = `
             <section class="contacto-section page-view">
@@ -437,7 +507,7 @@ function loadPage(page) {
         `;
     }
 
-    // NOTICIAS
+    // ==================== NOTICIAS ====================
     else if (page === 'noticias') {
         html = `
             <section class="placeholder-section page-view" style="display:flex; align-items:center; justify-content:center; text-align:center; min-height:50vh;">
@@ -450,8 +520,11 @@ function loadPage(page) {
         `;
     }
 
-    // Inyectar HTML y actualizar menú (excepto para calendario que ya lo hizo)
-    if (page !== 'calendario') {
+    // =====================================================
+    // Si la página NO es 'calendario' ni 'oferta' (que ya inyectaron su HTML),
+    // inyectamos el HTML y actualizamos el menú.
+    // =====================================================
+    if (page !== 'calendario' && page !== 'oferta') {
         mainContent.innerHTML = html;
         document.querySelectorAll('.nav-menu a, .hamburger-menu a').forEach(link => {
             link.classList.remove('active');
@@ -464,7 +537,10 @@ function loadPage(page) {
     }
 }
 
-// Event listeners para todos los enlaces
+// =====================================================
+// EVENT LISTENERS
+// =====================================================
+
 document.querySelectorAll('.nav-menu a, .hamburger-menu a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -489,10 +565,6 @@ document.querySelectorAll('.hamburger-menu a').forEach(link => {
     });
 });
 
-// Cargar Inicio al abrir la página
-document.addEventListener('DOMContentLoaded', () => {
-    loadPage('inicio');
-});
 // Cargar Inicio al abrir la página
 document.addEventListener('DOMContentLoaded', () => {
     loadPage('inicio');
